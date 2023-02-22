@@ -9,7 +9,7 @@ module.exports = {
       });
 
       res.status(200).json({
-        message: "Success Mendapatkan semua data kategori",
+        message: "Success mendapatkan semua data course category",
         data: categories,
       });
     } catch (err) {
@@ -28,7 +28,7 @@ module.exports = {
       });
 
       res.status(200).json({
-        message: "Success Mendapatkan semua data kategori",
+        message: "Success mendapatkan data course category",
         data: categories,
       });
     } catch (err) {
@@ -43,7 +43,7 @@ module.exports = {
       const categories = await CourseCategory.create({ name: name });
 
       res.status(201).json({
-        message: "Success tambah data kategori",
+        message: "Success menambahkan data course category",
         data: categories,
       });
     } catch (err) {
@@ -63,7 +63,7 @@ module.exports = {
 
       const categories = await checkCategory.update({ name: name });
       res.status(200).json({
-        message: "Success Updatet data kategori",
+        message: "Success mengubah data course category",
         data: categories,
       });
     } catch (err) {
@@ -79,7 +79,7 @@ module.exports = {
             coursecategory.destroy();
 
             res.status(200).json({
-                message: 'Success hapus kategori',
+                message: 'Success menghapus data course category',
                 data: coursecategory
             })
         }

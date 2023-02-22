@@ -6,6 +6,7 @@ module.exports = {
       const decoded = jwt.verify(req.headers.token, "secretketjwt");
       if (decoded) {
         req.user = decoded.user;
+        req.admin = decoded.admin;
         next();
       }
     } catch (err) {

@@ -6,18 +6,18 @@ module.exports = {
   signin: async (req, res, next) => {
     try {
       const { email, password } = req.body;
-      const checkUser = await Admin.findOne({ where: { email: email } });
+      const checkAdmin = await Admin.findOne({ where: { email: email } });
 
-      if (checkUser) {
-        const checkPassword = bcrypt.compareSync(password, checkUser.password);
+      if (checkAdmin) {
+        const checkPassword = bcrypt.compareSync(password, checkAdmin.password);
 
         if (checkPassword) {
           const token = jwt.sign(
             {
               admin: {
-                id: checkUser.id,
-                name: checkUser.name,
-                email: checkUser.email,
+                id: checkAdmin.id,
+                name: checkAdmin.name,
+                email: checkAdmin.email,
               },
             },
             "secretketjwt"
@@ -56,7 +56,7 @@ module.exports = {
         password: bcrypt.hashSync(password, 10),
       });
 
-      delete user.dataValues.password;
+      delete admin.dataValues.password;
 
       res.status(200).json({
         message: "Berhasil sign up",

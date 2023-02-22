@@ -8,7 +8,7 @@ module.exports = {
       });
 
       res.status(200).json({
-        message: "Success ambil data course",
+        message: "Success mendapatkan semua data course",
         data: course,
       });
     } catch (err) {
@@ -27,7 +27,7 @@ module.exports = {
       });
 
       res.status(200).json({
-        message: "Success Mendapatkan semua data kategori",
+        message: "Success mendapatkan data course",
         data: course,
       });
     } catch (err) {
@@ -45,7 +45,7 @@ module.exports = {
       });
 
       res.status(201).json({
-        message: "Success tambah data course",
+        message: "Success menambahkan data course",
         data: course,
       });
     } catch (err) {
@@ -68,7 +68,7 @@ module.exports = {
       });
 
       res.status(201).json({
-        message: "Success update data course",
+        message: "Success mengubah data course",
         data: course,
       });
     } catch (err) {
@@ -85,7 +85,7 @@ module.exports = {
           course.destroy();
 
           res.status(200).json({
-            message: "Success hapus kategori",
+            message: "Success menghapus course",
             data: course,
           });
         }
